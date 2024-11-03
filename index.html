@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Schedule Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        #campus-map {
+            width: 1100px;
+            height: 900px;
+            border: 1px solid black;
+            position: relative;
+            background-color: #f0f0f0;
+            margin-top: 20px;
+        }
+        .building {
+            position: absolute;
+            border: 2px solid #333;
+            background-color: #fff;
+        }
+        .building-label {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .hallway {
+            position: absolute;
+            background-color: #ddd;
+        }
+        .classroom {
+            position: absolute;
+            background-color: #e6e6e6;
+            border: 1px solid #999;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+        .classroom:hover {
+            background-color: #d0d0d0;
+        }
+        .path {
+            position: absolute;
+            height: 2px;
+            background-color: red;
+            z-index: 10;
+        }
+        .sequence-label {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: 1px solid black;
+            border-radius: 50%;
+            padding: 2px 5px;
+            font-size: 12px;
+            z-index: 12;
+        }
+        #calculate-path {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        #calculate-path:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Class Schedule Planner</h1>
+    <div id="course-list"></div>
+    <div id="selected-courses"></div>
+    <button id="calculate-path">Calculate Optimal Path</button>
+    <div id="campus-map"></div>
+    <div id="optimal-path"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
